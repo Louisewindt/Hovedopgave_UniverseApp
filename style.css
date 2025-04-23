@@ -39,3 +39,39 @@
     font-weight: 600;
     font-style: normal;
   }
+
+
+
+
+
+  /* Section Titles */
+.section__title {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    font-family: 'Rubrik', sans-serif;
+  }
+  
+  /* Shows */
+  .shows__list {
+    display: flex;
+    gap: 1rem;
+    font-family: 'Rubrik', sans-serif;
+  }
+  
+  .shows__item {
+    text-align: center;
+  }
+  
+  .shows__title {
+    font-size: 12px;
+    font-weight: 600;
+  }
+  
+  .shows__time {
+    font-size: 12px;
+    font-weight: 600;
+    border: 10px;
+    border-color: #d40f7d;
+  }
+  
