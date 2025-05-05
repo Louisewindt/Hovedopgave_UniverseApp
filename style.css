@@ -72,6 +72,10 @@ body{
     background-color:var(--color-blue);
     margin: 0px;
 }
+a {
+    text-decoration: none;
+    color: inherit;
+  }
 
 .logo{
     padding: 12px;
