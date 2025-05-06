@@ -26,7 +26,7 @@ function addSlider() {
   <button class="height__delete" onclick="removeSlider(this)">
     <img src="images/icon_delete.svg" alt="Slet barn" class="height__delete-icon">
   </button>
-  <input type="range" min="60" max="170" value="90" class="height__range" oninput="updateValue(this)">
+  <input type="range" min="90" max="210" value=60" class="height__range" oninput="updateValue(this)">
 `;
 
   container.appendChild(newSlider);
