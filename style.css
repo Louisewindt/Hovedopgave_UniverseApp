@@ -477,14 +477,16 @@ a {
 
 
     .height__question {
-      font-family: Rubrik;
+      font-family: 'Rubrik', sans-serif;
       font-size: 24px;
       font-weight: 700;
       text-align: center;
-      color: var(--color-primary);
-      -webkit-text-stroke-width: 2px;
+      color: var(--color-primary); /* pink inside */
+      -webkit-text-stroke-width: 3px; /* white outline */
       -webkit-text-stroke-color: white;
-      margin: var(--space-l) 0 var(--space-m);
+      paint-order: stroke fill;
+      margin: var(--space-xl) 0 var(--space-l);
+      margin-top: var(--space-xxxl);
     }
     
     .height__sliders {
@@ -494,19 +496,48 @@ a {
       gap: var(--space-m);
       margin-bottom: var(--space-l);
     }
+
+    .height__value{
+      font-family: 'Rubrik', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+    }
     
     .height__slider {
       display: flex;
       flex-direction: column;
       align-items: center;
       position: relative;
+      font-family: 'Rubrik', sans-serif;
+      font-size: 16px;
+      font-weight: 500;
     }
     
     .height__range {
+      -webkit-appearance: none;
       width: 250px;
-      accent-color: var(--color-secondary);
+      height: 8px;
+      border-radius: 999px;
+      outline: none;
       margin-top: var(--space-xs);
+      background: linear-gradient(to right, var(--color-secondary) 0%, var(--color-secondary) 100%);
+      transition: background 0.3s;
     }
+
+    /* Thumb style */
+.height__range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  border: 2px solid white;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
     
     .height__value {
       font-weight: 700;
@@ -517,12 +548,10 @@ a {
     .height__delete {
       background: transparent;
       border: none;
-      color: red;
       position: absolute;
-      top: 0;
-      right: -30px;
+      top: -8px;
+      right: 50px;
       font-size: 16px;
-      cursor: pointer;
     }
     
     .height__add {
@@ -531,12 +560,11 @@ a {
       background-color: white;
       border: 2px solid var(--color-secondary);
       color: var(--color-black);
-      padding: var(--space-xs) var(--space-l);
       border-radius: 100px;
       display: flex;
       align-items: center;
       gap: var(--space-xs);
       cursor: pointer;
       margin: 0 auto var(--space-xl);
+      padding: 4px 12px 4px 4px;
     }
-    
