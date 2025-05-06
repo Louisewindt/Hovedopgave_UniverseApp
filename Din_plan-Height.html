@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="banner banner--height">
+        <img src="images/banner_DinPlan_height.svg" alt="Girl measuring height" class="banner__illustration">
+        <section class="banner__content">
+          <h1 class="banner__title banner__title--big">Højde</h1>
+          <p class="banner__subtitle">Hvor høje er børnene? Angiv højde nedenunder du kan tilføje flere børn, hvis der er behov for det.</p>
+        </section>
+      </section>
+      
+      <h2 class="height__question">Hvor høje er børnene?</h2>
+      
+      <section id="height-sliders" class="height__sliders">
+        <section class="height__slider">
+          <label>Barn 1: <span class="height__value">90</span> cm</label>
+          <button class="height__delete" onclick="removeSlider(this)">✖</button>
+          <input type="range" min="60" max="170" value="90" class="height__range" oninput="updateValue(this)">
+        </section>
+      </section>
+      
+      <button class="height__add" onclick="addSlider()">➕ Tilføj flere</button>
+      
+      <section class="step__nav">
+        <button class="button button__secondary">← Tilbage</button>
+        <button class="button button__primary">Næste →</button>
+      </section>
+
+
+
+
+      <script src="JSHeight.js"></script>      
+    
+</body>
+</html>

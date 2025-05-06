@@ -13,3 +13,5 @@ btnLeft.addEventListener('click', () => {
 btnRight.addEventListener('click', () => {
   list.scrollBy({ left: scrollAmount * 3, behavior: 'smooth' });
 });
+
+
