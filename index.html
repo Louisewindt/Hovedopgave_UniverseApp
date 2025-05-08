@@ -7,161 +7,148 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <img class="logo" src="images/white_logo.svg" alt="White Universe logo">
-    <main class="homepage">
+  <img class="logo" src="images/white_logo.svg" alt="White Universe logo">
+  <main class="homepage">
 
-        <section class="homepage__shows">
-            <h2 class="section__title">Shows i dag</h2>
-          <img src="images/arrow_left.svg" alt="Scroll left" class="shows__arrow shows__arrow--left" />
+    <section class="homepage__shows">
+      <h2 class="section__title">Shows i dag</h2>
+      <img src="images/arrow_left.svg" alt="Scroll left" class="shows__arrow shows__arrow--left" />
 
-            <section class="shows__container">
-          
-              <ul class="shows__list">
-                <li class="shows__item">
-                  <img src="images/fulldome_show.svg" alt="Fulldome Show" class="shows__image">
-                  <h3 class="shows__title">Fulldome Show</h3>
-                  <time class="shows__time">11:30</time>
-                </li>
-          
-                <li class="shows__item">
-                  <section class="shows__image-wrapper">
-                    <img src="images/fulldome_show.svg" alt="Fulldome Show" class="shows__image">
-                    <img src="images/flag_uk.png" alt="UK Flag" class="shows__flag">
-                  </section>
-                  <h3 class="shows__title">Fulldome Show</h3>
-                  <time class="shows__time">12:00</time>
-                </li>
-          
-                <li class="shows__item">
-                  <img src="images/science_show.svg" alt="Science Show" class="shows__image">
-                  <h3 class="shows__title">Science Show</h3>
-                  <time class="shows__time">13:00</time>
-                </li>
-          
-                <li class="shows__item">
-                  <img src="images/robert_robot.png" alt="Robert Robot" class="shows__image">
-                  <h3 class="shows__title">Robert<br>Robot</h3>
-                  <time class="shows__time">14:00</time>
-                </li>
-          
-                <li class="shows__item">
-                  <img src="images/fulldome_show.svg" alt="Fulldome Show" class="shows__image">
-                  <h3 class="shows__title">Fulldome Show</h3>
-                  <time class="shows__time">15:30</time>
-                </li>
-          
-                <li class="shows__item">
-                  <section class="shows__image-wrapper">
-                    <img src="images/fulldome_show.svg" alt="Fulldome Show" class="shows__image">
-                    <img src="images/flag_de.png" alt="German Flag" class="shows__flag">
-                  </section>
-                  <h3 class="shows__title">Fulldome Show</h3>
-                  <time class="shows__time">16:00</time>
-                </li>
-              </ul>
-              
+      <section class="shows__container">
+        <ul class="shows__list">
+          <li class="shows__item">
+            <img src="images/fulldome_show.svg" alt="Fulldome Show" class="shows__image">
+            <h3 class="shows__title">Fulldome Show</h3>
+            <time class="shows__time">11:30</time>
+          </li>
+          <li class="shows__item">
+            <section class="shows__image-wrapper">
+              <img src="images/fulldome_show.svg" alt="Fulldome Show" class="shows__image">
+              <img src="images/flag_uk.png" alt="UK Flag" class="shows__flag">
             </section>
+            <h3 class="shows__title">Fulldome Show</h3>
+            <time class="shows__time">12:00</time>
+          </li>
+          <li class="shows__item">
+            <img src="images/science_show.svg" alt="Science Show" class="shows__image">
+            <h3 class="shows__title">Science Show</h3>
+            <time class="shows__time">13:00</time>
+          </li>
+          <li class="shows__item">
+            <img src="images/robert_robot.png" alt="Robert Robot" class="shows__image">
+            <h3 class="shows__title">Robert<br>Robot</h3>
+            <time class="shows__time">14:00</time>
+          </li>
+          <li class="shows__item">
+            <img src="images/fulldome_show.svg" alt="Fulldome Show" class="shows__image">
+            <h3 class="shows__title">Fulldome Show</h3>
+            <time class="shows__time">15:30</time>
+          </li>
+          <li class="shows__item">
+            <section class="shows__image-wrapper">
+              <img src="images/fulldome_show.svg" alt="Fulldome Show" class="shows__image">
+              <img src="images/flag_de.png" alt="German Flag" class="shows__flag">
+            </section>
+            <h3 class="shows__title">Fulldome Show</h3>
+            <time class="shows__time">16:00</time>
+          </li>
+        </ul>
+      </section>
 
-            <img src="images/arrow_right.svg" alt="Scroll right" class="shows__arrow shows__arrow--right" />
-          </section>
-      
+      <img src="images/arrow_right.svg" alt="Scroll right" class="shows__arrow shows__arrow--right" />
+    </section>
+
     <section class="banners">
+      <a href="Din_plan.html" class="banner banner--plan">
+        <img src="images/DinPlan_Illustration.svg" alt="Man guiding child" class="banner__illustration" />
+        <section class="banner__content">
+          <h4 class="banner__title banner__title--highlight">Din plan</h4>
+          <p class="banner__subtitle banner__subtitle--highlight">Bliv guidet rundt</p>
+          <button class="button button--highlight" onclick="event.stopPropagation(); location.href='Din_plan.html';">
+            <img src="images/play_icon.svg" alt="" class="button__icon">Start
+          </button>
+        </section>
+      </a>
 
-<a href="Din_plan.html" class="banner banner--plan">
-  <img src="images/DinPlan_Illustration.svg" alt="Man guiding child" class="banner__illustration" />
-
-  <section class="banner__content">
-    <h4 class="banner__title--highlight">Din plan</h4>
-    <p class="banner__subtitle--highlight">Bliv guidet rundt</p>
-
-    <button class="button button--highlight" onclick="event.stopPropagation(); location.href='Din_plan.html';">
-      <img src="images/play_icon.svg" alt="" class="button__icon">Start
-    </button>
-  </section>
-</a>
-      
-        <section class="banner banner--attractions">
-            <img src="images/banner_attractions.svg" alt="" class="banner__illustration">
-
-            <section class="banner__content">
+      <section class="banner banner--attractions">
+        <img src="images/banner_attractions.svg" alt="" class="banner__illustration">
+        <section class="banner__content">
           <h4 class="banner__title">Forlystelser</h4>
           <p class="banner__subtitle">Kom og ha det sjovt!</p>
-          <button class="button__secondary">
-            <img src="images/button_secondary_icon.svg" alt="" class="button__icon">Start</button>
-            </section>
-        </section>
-      
-        <section class="banner banner--resturants">
-            <img src="images/banner_resturant.svg" alt="" class="banner__illustration banner__illustration--resturant">
-
-            <section class="banner__content">
-          <h4 class="banner__title">Spisesteder</h4>
-          <p class="banner__subtitle">Spis noget lækkert</p>
-          <button class="button__secondary">
-            <img src="images/button_secondary_icon.svg" alt="" class="button__icon">Start</button>
-            </section>
-        </section>
-      
-        <section class="banner banner--shows">
-            <img src="images/banner_shows.svg" alt="" class="banner__illustration banner__illustration--shows">
-
-            <section class="banner__content">
-          <h4 class="banner__title">Shows</h4>
-          <p class="banner__subtitle">Hvad kan man lære</p>
-          <button class="button__secondary">
-            <img src="images/button_secondary_icon.svg" alt="" class="button__icon">Start</button>
-            </section>
-        </section>
-      
-        <section class="banner banner--discount">
-            <img src="images/banner_discount.svg" alt="" class="banner__illustration banner__illustration--discount">
-
-            <section class="banner__content">
-          <h4 class="banner__title">Få Rabat</h4>
-          <p class="banner__subtitle">Det bliver ikke bedre</p>
-          <button class="button__secondary">
-            <img src="images/button_secondary_icon.svg" alt="" class="button__icon">Start</button>
-            </section>
+          <button class="button button--secondary">
+            <img src="images/button_secondary_icon.svg" alt="" class="button__icon">Start
+          </button>
         </section>
       </section>
 
-      <nav class="menu">
-        <ul class="menu__list">
-          <li class="menu__item">
-            <a href="#" class="menu__link">
-              <img src="images/icon_map.svg" alt="" class="menu__icon">
-              <span class="menu__label">Parkkort</span>
-            </a>
-          </li>
-          <li class="menu__item">
-            <a href="#" class="menu__link">
-              <img src="images/icon_plan.svg" alt="" class="menu__icon">
-              <span class="menu__label">Din plan</span>
-            </a>
-          </li>
-      
-          <li class="menu__item">
-            <a href="#" class="menu__link">
-              <img src="images/icon_logo.svg" alt="Universe logo">
-            </a>
-          </li>
-      
-          <li class="menu__item">
-            <a href="#" class="menu__link">
-              <img src="images/icon_scan.svg" alt="" class="menu__icon">
-              <span class="menu__label">Scan</span>
-            </a>
-          </li>
-          <li class="menu__item">
-            <a href="#" class="menu__link">
-              <img src="images/icon_settings.svg" alt="" class="menu__icon">
-              <span class="menu__label">Indstillinger</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-      
-      </main>
-      <script src="script.js"></script>
+      <section class="banner banner--restaurants">
+        <img src="images/banner_resturant.svg" alt="" class="banner__illustration banner__illustration--restaurant">
+        <section class="banner__content">
+          <h4 class="banner__title">Spisesteder</h4>
+          <p class="banner__subtitle">Spis noget lækkert</p>
+          <button class="button button--secondary">
+            <img src="images/button_secondary_icon.svg" alt="" class="button__icon">Start
+          </button>
+        </section>
+      </section>
+
+      <section class="banner banner--shows">
+        <img src="images/banner_shows.svg" alt="" class="banner__illustration banner__illustration--shows">
+        <section class="banner__content">
+          <h4 class="banner__title">Shows</h4>
+          <p class="banner__subtitle">Hvad kan man lære</p>
+          <button class="button button--secondary">
+            <img src="images/button_secondary_icon.svg" alt="" class="button__icon">Start
+          </button>
+        </section>
+      </section>
+
+      <section class="banner banner--discount">
+        <img src="images/banner_discount.svg" alt="" class="banner__illustration banner__illustration--discount">
+        <section class="banner__content">
+          <h4 class="banner__title">Få Rabat</h4>
+          <p class="banner__subtitle">Det bliver ikke bedre</p>
+          <button class="button button--secondary">
+            <img src="images/button_secondary_icon.svg" alt="" class="button__icon">Start
+          </button>
+        </section>
+      </section>
+    </section>
+
+    <nav class="menu">
+      <ul class="menu__list">
+        <li class="menu__item">
+          <a href="#" class="menu__link">
+            <img src="images/icon_map.svg" alt="" class="menu__icon">
+            <span class="menu__label">Parkkort</span>
+          </a>
+        </li>
+        <li class="menu__item">
+          <a href="#" class="menu__link">
+            <img src="images/icon_plan.svg" alt="" class="menu__icon">
+            <span class="menu__label">Din plan</span>
+          </a>
+        </li>
+        <li class="menu__item">
+          <a href="#" class="menu__link">
+            <img src="images/icon_logo.svg" alt="Universe logo">
+          </a>
+        </li>
+        <li class="menu__item">
+          <a href="#" class="menu__link">
+            <img src="images/icon_scan.svg" alt="" class="menu__icon">
+            <span class="menu__label">Scan</span>
+          </a>
+        </li>
+        <li class="menu__item">
+          <a href="#" class="menu__link">
+            <img src="images/icon_settings.svg" alt="" class="menu__icon">
+            <span class="menu__label">Indstillinger</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>

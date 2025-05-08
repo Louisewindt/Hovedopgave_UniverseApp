@@ -1,48 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <section class="page-content">
     <section class="banner banner--height">
-        <img src="images/banner_DinPlan_height.svg" alt="Girl measuring height" class="banner__illustration">
-        <section class="banner__content">
-          <h1 class="banner__title banner__title--big">Højde</h1>
-          <p class="banner__subtitle">Hvor høje er børnene? Angiv højde nedenunder du kan tilføje flere børn, hvis der er behov for det.</p>
-        </section>
+      <img src="images/banner_DinPlan_height.svg" alt="Girl measuring height" class="banner__illustration" />
+      <section class="banner__content">
+        <h1 class="banner__title banner__title--big">Højde</h1>
+        <p class="banner__subtitle">
+          Hvor høje er børnene? Angiv højde nedenunder du kan tilføje flere børn, hvis der er behov for det.
+        </p>
       </section>
-      
-      <h2 class="height__question">Hvor høje er børnene?</h2>
-      
-      <section id="height-sliders" class="height__sliders">
-        <section class="height__slider">
-          <label>Barn 1: <span class="height__value">60</span> cm</label>
+    </section>
 
-          <button class="height__delete" onclick="removeSlider(this)">
-            <img src="images/icon_delete.svg" alt="Slet barn" />
-          </button>
-          <input type="range" min="90" max="210" value="60" class="height__range" oninput="updateValue(this)">
-        
-        </section>
+    <h2 class="question question--height">Hvor høje er børnene?</h2>
+
+    <section id="height-sliders" class="height__sliders">
+      <section class="height__slider">
+        <label>Barn 1: <span class="height__value">60</span> cm</label>
+        <button class="height__delete" onclick="removeSlider(this)">
+          <img src="images/icon_delete.svg" alt="Slet barn" />
+        </button>
+        <input
+          type="range"
+          min="90"
+          max="210"
+          value="60"
+          class="height__range"
+          oninput="updateValue(this)"
+        />
       </section>
-      
-      <button class="height__add" onclick="addSlider()">
-        <img src="images/icon_plus.svg" alt="" class="button__icon">Tilføj flere
-      </button>
-      
-      
-      <section class="step__nav">
-        <button class="button button__secondary">← Tilbage</button>
-        <button class="button button__primary">Næste →</button>
-      </section>
+    </section>
 
+    <button class="height__add" onclick="addSlider()">
+      <img src="images/icon_plus.svg" alt="Tilføj barn" class="button__icon" />Tilføj flere
+    </button>
+  </section>
 
+  <section class="step-indicator">
+    <a href="din_plan-height.html" class="step-indicator__step step-indicator__step--active">1</a>
+    <span class="step-indicator__line step-indicator__line--active"></span>
+    <a href="din_plan-food.html" class="step-indicator__step">2</a>
+    <span class="step-indicator__line"></span>
+    <a href="din_plan-shows.html" class="step-indicator__step">3</a>
+  </section>
 
+  <section class="step__nav">
+    <a href="din_plan.html" class="button button--secondary">
+      <img src="images/arrow_back-white.svg" class="button__icon" />
+      <span>Tilbage</span>
+    </a>
+    <a href="din_plan-food.html" class="button button--primary">
+      <img src="images/play_icon.svg" alt="" class="button__icon" />
+      <span>Næste</span>
+    </a>
+  </section>
 
-      <script src="JSHeight.js"></script>      
-    
+  <script src="JSHeight.js"></script>
 </body>
 </html>

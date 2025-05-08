@@ -1,530 +1,581 @@
+/* -------------------------------- */
+/* GLOBAL STYLES (used everywhere) */
+/* -------------------------------- */
+
 @font-face {
-    font-family: 'Rubrik';
-    src: url('font/Rubrik\ Regular.otf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'Rubrik';
-    src: url('font/Rubrik\ Bold.otf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'Rubrik';
-    src: url('font/Rubrik\ ExtraLight.otf') format('truetype');
-    font-weight: 200;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'Rubrik';
-    src: url('font/Rubrik\ Light.otf.otf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'Rubrik';
-    src: url('font/Rubrik\ Medium.otf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'Rubrik';
-    src: url('font/Rubrik\ SemiBold.otf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-  }
-  :root {
-    /* Primary Colors */
-    --color-primary: #D40F7D;
-    --color-secondary: #78be20;
-  
-    /* Neutral & Background Colors */
-    --color-white: #FFFFFF;
-    --color-black: #000000;
-    --color-gray: #D9D9D9;
-    --color-blue: #CBEEEE;
-  
-    /* Accent Colors */
-    --color-orange: #EC7334;
-    --color-red: #EC3A34;
-    --color-yellow: #FFCA28;
-    --color-brown: #884D2F;
-
-      /* Spacing scale */
-    --space-xxs: 4px;
-    --space-xs: 8px;
-    --space-s: 12px;
-    --space-m: 16px;
-    --space-l: 24px;
-    --space-xl: 32px;
-    --space-xxl: 48px;
-    --space-xxxl: 64px;
-    --space-xxxxl: 96px;
-  }
-
-body{
-    background-color:var(--color-blue);
-    margin: 0px;
+  font-family: 'Rubrik';
+  src: url('font/Rubrik\\ Regular.otf') format('truetype');
+  font-weight: 400;
 }
+@font-face {
+  font-family: 'Rubrik';
+  src: url('font/Rubrik\\ Bold.otf') format('truetype');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Rubrik';
+  src: url('font/Rubrik\\ ExtraLight.otf') format('truetype');
+  font-weight: 200;
+}
+@font-face {
+  font-family: 'Rubrik';
+  src: url('font/Rubrik\\ Light.otf.otf') format('truetype');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Rubrik';
+  src: url('font/Rubrik\\ Medium.otf') format('truetype');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Rubrik';
+  src: url('font/Rubrik\\ SemiBold.otf') format('truetype');
+  font-weight: 600;
+}
+
+:root {
+  /* Colors */
+  --color-primary: #D40F7D;
+  --color-secondary: #78be20;
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-gray: #D9D9D9;
+  --color-blue: #CBEEEE;
+  --color-orange: #EC7334;
+  --color-red: #EC3A34;
+  --color-yellow: #FFCA28;
+  --color-brown: #884D2F;
+
+  /* Spacing scale */
+  --space-xxs: 4px;
+  --space-xs: 8px;
+  --space-s: 12px;
+  --space-m: 16px;
+  --space-l: 24px;
+  --space-xl: 32px;
+  --space-xxl: 48px;
+  --space-xxxl: 64px;
+  --space-xxxxl: 96px;
+}
+
+body {
+  background-color: var(--color-blue);
+  margin: 0;
+  font-family: 'Rubrik', sans-serif;
+}
+
 a {
-    text-decoration: none;
-    color: inherit;
-  }
-
-.logo{
-    padding: 12px;
+  text-decoration: none;
+  color: inherit;
 }
 
-  /* Section Titles */
+.logo {
+  padding: 12px;
+}
 
-  .homepage__shows{
-    margin-bottom: var(--space-l);
-  }
+.button {
+  display: flex;
+  align-items: center;
+  gap: var(--space-s);
+  padding: var(--space-xs) var(--space-l);
+  border-radius: 100px;
+  border: none;
+  font-family: Rubrik;
+  font-size: 16px;
+  font-weight: 400;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-top: var(--space-l);
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+.button--secondary {
+  background-color: var(--color-secondary);
+}
+
+.button--primary {
+  background-color: var(--color-primary);
+}
+
+.button__icon {
+  width: 22px;
+  height: 22px;
+}
+
+.step-indicator {
+  position: fixed;
+  bottom: 45px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  padding: var(--space-xxl) 0;
+  z-index: 9;
+  pointer-events: none;
+}
+
+.step-indicator__step {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: var(--color-gray);
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  z-index: 2;
+}
+
+.step-indicator__step--active {
+  background-color: var(--color-secondary);
+  box-shadow: 0 0 0 4px rgba(120, 190, 32, 0.3);
+}
+
+.step-indicator__line {
+  width: 64px;
+  height: 6px;
+  border-radius: 3px;
+  background-color: var(--color-gray);
+  margin: 16px -2px;
+  z-index: 1;
+}
+
+.step-indicator__line--active {
+  background: linear-gradient(to right, var(--color-secondary), transparent);
+}
+
+/* -------------------------------- */
+/* INDEX.HTML - Landing Page       */
+/* -------------------------------- */
+
+/* --- Homepage Shows Section --- */
+
+.homepage__shows {
+  margin-bottom: var(--space-l);
+}
+
 .section__title {
-    font-size: 24px;
-    margin-top: 0px;
-    font-weight: 700;
-    text-align: center;
-    font-family: 'Rubrik', sans-serif;
-    color: white;            /* Pink inside */
-    -webkit-text-stroke-width: 5px;       /* Thinner stroke */
-    -webkit-text-stroke-color: var(--color-primary);       /* White outline */
-    paint-order: stroke fill;               /* Prioritize stroke first */
-    
-  }
-  
-  /* Shows */
-  .shows__list {
-    display: flex;
-    gap: var(--space-s);
-    list-style: none;
-    margin: 0;
-    padding: 4px;
-    overflow-x: auto; /* THIS must be on list!! */
-    width: calc(3 * 80px + 2 * var(--space-s));
-    scroll-behavior: smooth;
-    scrollbar-width: none;        /* Firefox */
-    -ms-overflow-style: none;     /* Internet Explorer/Edge */
-  }
-  
-  .shows__item {
-    flex: 0 0 80px; /* fixed width */
-    text-align: center;
-  }
-  
-  .shows__title {
-    font-size: 16px;
-    font-weight: 600;
-    font-family: 'Rubrik';
-    margin: 0%;
-  }
-
-  .shows__time {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--color-primary);
-    font-family: 'Rubrik';
-    color: var(--color-primary);            /* Pink inside */
-    -webkit-text-stroke-width: 2px;       /* Thinner stroke */
-    -webkit-text-stroke-color: white;       /* White outline */
-    paint-order: stroke fill;               /* Prioritize stroke first */
-  }
-
-  .shows__arrow {
-    position: absolute;
-    width: 10px;
-    height: auto;
-    cursor: pointer;
-    z-index: 2;
-  }
-  
-  .shows__arrow--left {
-    top: 25%;
-    left: 16px;
-  }
-  
-  .shows__arrow--right {
-    top: 25%;
-    left: 91%;
-  }
-  
-
-  .shows__image-wrapper {
-    position: relative;
-    display: inline-block; /* Keeps it only as big as the image */
-  }
-
-  .shows__container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden; /* good! */
-    max-width: 300px;
-    margin: 0 auto;
-  }
-
-  .shows__image {
-    display: block;
-    width: 80px;
-    height: auto;
-  }
-  
-  .shows__flag {
-    position: absolute;
-    top: -5px;
-    right: -3px;
-    width: 25px;
-    height: 25px;
-  }
-  
-
-  /* Din Plan Banner*/
-
-  .banners {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-m); /* or whatever spacing you want */
-    align-items: center; /* optional, keeps banners centered */
-    margin-bottom: var(--space-xxxxl);
-  }
-
-  .banner{
-    display: flex;
-    position: relative;
-    width: 300px;
-    height: 150px;
-    padding: var(--Spacing-XXS, 4px) 16px var(--Spacing-XXS, 4px);
-    flex-direction: column;
-    gap: 10px;
-    margin: 0 auto;
-    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
-  }
-  
-  .banner--plan{
-    border-radius: 8px;
-    border: 5px solid var(--color-white, #FFF);
-    background-image: url(images/DinPlan_banner.svg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  .banner__illustration {
-    position: absolute;
-    right: 8px;
-    bottom: 0;
-    object-fit: contain;
-    z-index: 0;
-  }
-  
-.banner__illustration--resturant{
-    height: 88%;
+  font-size: 24px;
+  margin-top: 0;
+  font-weight: 700;
+  text-align: center;
+  font-family: 'Rubrik', sans-serif;
+  color: white;
+  -webkit-text-stroke-width: 5px;
+  -webkit-text-stroke-color: var(--color-primary);
+  paint-order: stroke fill;
 }
-.banner__illustration--shows{
-    height: 88%;
-    bottom: 4px;
+
+.shows__container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  max-width: 300px;
+  margin: 0 auto;
 }
-.banner__illustration--discount{
-    height: 90%;
+
+.shows__list {
+  display: flex;
+  gap: var(--space-s);
+  list-style: none;
+  margin: 0;
+  padding: 4px;
+  overflow-x: auto;
+  width: calc(3 * 80px + 2 * var(--space-s));
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
-  
-  .banner__content {
-    position: relative;
-    z-index: 1;
-  }
 
-  .button {
-    display: flex;
-    align-items: center;
-    gap: var(--space-s);
-    padding: var(--space-xs) var(--space-l) var(--space-xs) var(--space-l);
-    border-radius: 100px;
-    background: var(--color-primary);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border: none;
-    color: var(--color-white);
-    font-family: Rubrik;
-    font-size: 16px;
-    margin-top: var(--space-l);
-    font-weight: 400;
-  }
-  
-  .button__secondary{
-    display: flex;
-    align-items: center;
-    gap: var(--space-s);
-    padding: var(--space-xs) var(--space-l) var(--space-xs) var(--space-l);
-    border-radius: 100px;
-    background: var(--color-secondary);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border: none;
-    color: var(--color-white);
-    font-family: Rubrik;
-    font-size: 16px;
-    margin-top: var(--space-l);
-    font-weight: 400;
-  }
+.shows__item {
+  flex: 0 0 80px;
+  text-align: center;
+}
 
-  .banner__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    max-width: 60%; /* Optional: helps avoid overlapping the character image */
-  }
+.shows__title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
 
-  .banner__title--highlight{
-    font-family: Rubrik;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 700;
-    margin: 4px;
-    color: var(--color-primary);            /* Pink inside */
-    -webkit-text-stroke-width: 7px;       /* Thinner stroke */
-    -webkit-text-stroke-color: white;       /* White outline */
-    paint-order: stroke fill;               /* Prioritize stroke first */
-  }
+.shows__time {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-primary);
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: white;
+  paint-order: stroke fill;
+}
 
-  .banner__subtitle--highlight{
-    margin: 4px;
-    font-family: Rubrik;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    color: var(--color-black);            /* Pink inside */
-    -webkit-text-stroke-width: 2px;       /* Thinner stroke */
-    -webkit-text-stroke-color: white;       /* White outline */
-    paint-order: stroke fill;               /* Prioritize stroke first */
-  }
+.shows__image {
+  width: 80px;
+  height: auto;
+  display: block;
+}
 
-  .banner__title{
-    font-family: Rubrik;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    margin: 4px;
-  }
-  .banner__subtitle{
-    font-family: Rubrik;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 200;
-    line-height: normal;
-    margin: 4px;
-  }
+.shows__flag {
+  position: absolute;
+  top: -5px;
+  right: -3px;
+  width: 25px;
+  height: 25px;
+}
 
-  .banner--attractions{
-    border-radius: 8px;
-    border: 5px solid var(--color-white, #FFF);
-    background-size: cover;
-    background-color: var(--color-white);
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  .banner--resturants{
-    border-radius: 8px;
-    border: 5px solid var(--color-white, #FFF);
-    background-size: cover;
-    background-color: var(--color-white);
-    background-position: center;
-    background-repeat: no-repeat;
-  }
+.shows__image-wrapper {
+  position: relative;
+  display: inline-block;
+}
 
-  .banner--shows{
-    border-radius: 8px;
-    border: 5px solid var(--color-white, #FFF);
-    background-size: cover;
-    background-color: var(--color-white);
-    background-position: center;
-    background-repeat: no-repeat;
-  }
+.shows__arrow {
+  position: absolute;
+  width: 10px;
+  height: auto;
+  cursor: pointer;
+  z-index: 2;
+}
 
-  .banner--discount{
-    border-radius: 8px;
-    border: 5px solid var(--color-white, #FFF);
-    background-size: cover;
-    background-color: var(--color-white);
-    background-position: center;
-    background-repeat: no-repeat;
-  }
+.shows__arrow--left {
+  top: 25%;
+  left: 16px;
+}
+
+.shows__arrow--right {
+  top: 25%;
+  left: 91%;
+}
 
 
+/* --- Din Plan Banner Section --- */
 
-  .menu {
-    position: fixed;
-    bottom: -1px;
-    width: 101%;
-    background-color: var(--color-secondary); /* your green */
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    z-index: 10;
-    overflow: hidden;
-    
-  }
-  .menu__link {
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .menu__list {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: var(--space-xs);
-    margin: 0;
-    list-style: none;
-    position: relative;
-  }
-  
-  .menu__item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-    font-family: Rubrik;
-    font-size: 16px;
-    font-weight: 300;
-  }
-  
-  .menu__icon {
-    width: 32px;
-    height: 32px;
-    margin-bottom: 4px;
-  }
-  
-  .menu__label {
-    font-size: 14px;
-    font-weight: 400;
-  }
-  
-  .menu__logo {
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 50%;
-    padding: 12px;
-  }
+.banners {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: var(--space-xxxxl);
+}
 
+.banner {
+  position: relative;
+  width: 300px;
+  height: 150px;
+  padding: var(--space-xxs) 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: var(--space-s) auto;
+  background-color: var(--color-white);
+  border: 5px solid var(--color-white);
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+}
 
-    /* Din Plan*/
+.banner__plan {
+  background-image: url(images/DinPlan_banner.svg);
+}
 
-    .arrow__back{
-      margin-top: 8px;
-    }
-    .banner__info{
-      border-radius: 8px;
-      border: 5px solid var(--color-white, #FFF);
-      background-size: cover;
-      background-color: var(--color-white);
-      background-position: center;
-      background-repeat: no-repeat;
-    }
+.banner__illustration {
+  position: absolute;
+  right: 8px;
+  bottom: 0;
+  object-fit: contain;
+  z-index: 0;
+}
 
-    .banner__title--big{
-      color: white;            /* Pink inside */
-      -webkit-text-stroke-width: 8px;       /* Thinner stroke */
-      -webkit-text-stroke-color: var(--color-primary);       /* White outline */
-      paint-order: stroke fill;               /* Prioritize stroke first */
-    }
+.banner__illustration--resturant,
+.banner__illustration--shows {
+  height: 88%;
+}
 
-    .DinPlan__prompt{
-      font-family: 'Rubrik', sans-serif;
-      font-size: 24px;
-      font-weight: 700;
-      text-align: center;
-      color: var(--color-primary); /* pink inside */
-      -webkit-text-stroke-width: 3px; /* white outline */
-      -webkit-text-stroke-color: white;
-      paint-order: stroke fill;
-      margin: var(--space-xl) 0 var(--space-l);
-      margin-top: var(--space-xxxl);
-    }
+.banner__illustration--shows {
+  bottom: 4px;
+}
 
-    .button__primary--big{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 176px;
-      padding: var(--space-s, 12px) var(--space-xl, 32px);
-      gap: var(--space-m, 16px);
-      font-family: Rubrik;
-      font-size: 32px;
-      font-weight: 400;
-      border-radius: 100px;
-      color: white;
-      margin: 0 auto; /*centers the button*/
-      margin-top: var(--space-xxxxl);
-    }
+.banner__illustration--discount {
+  height: 90%;
+}
 
-    .button__icon--big{
-      width: 25px;
-      height: 25px;
-    }
+.banner__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 60%;
+  position: relative;
+  z-index: 1;
+}
+
+.banner__title--highlight {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 4px;
+  color: var(--color-primary);
+  -webkit-text-stroke-width: 7px;
+  -webkit-text-stroke-color: white;
+  paint-order: stroke fill;
+}
+
+.banner__subtitle--highlight {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 4px;
+  color: var(--color-black);
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: white;
+  paint-order: stroke fill;
+}
+
+.banner__title {
+  font-size: 32px;
+  font-weight: 600;
+  margin: 4px;
+}
+
+.banner__subtitle {
+  font-size: 16px;
+  font-weight: 200;
+  margin: 4px;
+}
 
 
+/* --- Footer Menu --- */
+
+.menu {
+  position: fixed;
+  bottom: -1px;
+  width: 101%;
+  background-color: var(--color-secondary);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.menu__list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: var(--space-xs);
+  margin: 0;
+  list-style: none;
+  position: relative;
+}
+
+.menu__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.menu__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.menu__icon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 4px;
+}
+
+.menu__label {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.menu__logo {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  padding: 12px;
+}
+/* -------------------------------- */
+/* DIN_PLAN.HTML             */
+/* -------------------------------- */
+.arrow__back img {
+  margin-top: 8px;
+}
+
+.banner__info {
+  border-radius: 8px;
+  border: 5px solid var(--color-white, #FFF);
+  background-size: cover;
+  background-color: var(--color-white);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.banner__illustration {
+  position: absolute;
+  right: 8px;
+  bottom: 0;
+  object-fit: contain;
+  z-index: 0;
+}
+
+.banner__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 60%;
+  position: relative;
+  z-index: 1;
+}
+
+.banner__title {
+  font-family: Rubrik;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 4px;
+}
+
+.banner__title--big {
+  color: white;
+  -webkit-text-stroke-width: 8px;
+  -webkit-text-stroke-color: var(--color-primary);
+  paint-order: stroke fill;
+}
+
+.banner__subtitle {
+  font-family: Rubrik;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+  margin: 4px;
+}
+
+.DinPlan__prompt {
+  font-family: 'Rubrik', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--color-primary);
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: white;
+  paint-order: stroke fill;
+  margin: var(--space-xl) 0 var(--space-l);
+  margin-top: var(--space-xxxl);
+}
+
+.button.button__primary--big {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 176px;
+  padding: var(--space-s, 12px) var(--space-xl, 32px);
+  gap: var(--space-m, 16px);
+  font-family: Rubrik;
+  font-size: 32px;
+  font-weight: 400;
+  border-radius: 100px;
+  color: white;
+  margin: 0 auto;
+  margin-top: var(--space-xxxxl);
+  background-color: var(--color-primary); /* make sure this is applied! */
+}
+
+.button__icon--big {
+  width: 25px;
+  height: 25px;
+}
 
 
+/* -------------------------------- */
+/* DIN_PLAN-HEIGHT.HTML             */
+/* -------------------------------- */
 
-    .height__question {
-      font-family: 'Rubrik', sans-serif;
-      font-size: 24px;
-      font-weight: 700;
-      text-align: center;
-      color: var(--color-primary); /* pink inside */
-      -webkit-text-stroke-width: 3px; /* white outline */
-      -webkit-text-stroke-color: white;
-      paint-order: stroke fill;
-      margin: var(--space-xl) 0 var(--space-l);
-      margin-top: var(--space-xxxl);
-    }
-    
-    .height__sliders {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: var(--space-m);
-      margin-bottom: var(--space-l);
-    }
+/* --- Page Padding to Make Room for Bottom Navigation --- */
+.page-content {
+  padding-bottom: 160px; /* Space for fixed nav and step indicator */
+}
 
-    .height__value{
-      font-family: 'Rubrik', sans-serif;
-      font-size: 16px;
-      font-weight: 700;
-    }
-    
-    .height__slider {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-      font-family: 'Rubrik', sans-serif;
-      font-size: 16px;
-      font-weight: 500;
-    }
-    
-    .height__range {
-      -webkit-appearance: none;
-      width: 250px;
-      height: 8px;
-      border-radius: 999px;
-      outline: none;
-      margin-top: var(--space-xs);
-      background: linear-gradient(to right, var(--color-secondary) 0%, var(--color-secondary) 100%);
-      transition: background 0.3s;
-    }
+/* --- Banner Section (Shared Styles) --- */
+.banner--height {
+  /* Uses shared .banner styles */
+}
 
-    /* Thumb style */
+.banner__title--big {
+  color: white;
+  -webkit-text-stroke-width: 8px;
+  -webkit-text-stroke-color: var(--color-primary);
+  paint-order: stroke fill;
+}
+
+/* --- Question Title --- */
+.question {
+  font-family: 'Rubrik', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--color-primary);
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: white;
+  paint-order: stroke fill;
+  margin: 0%;
+}
+
+.question--height {
+  margin-bottom: var(--space-m);
+}
+
+/* --- Height Slider Section --- */
+.height__sliders {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-m);
+  margin-bottom: var(--space-l);
+}
+
+.height__slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  font-family: 'Rubrik', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.height__value {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-left: 4px;
+}
+
+/* Slider appearance */
+.height__range {
+  -webkit-appearance: none;
+  width: 250px;
+  height: 8px;
+  border-radius: 999px;
+  outline: none;
+  margin-top: var(--space-xs);
+  background: linear-gradient(to right, var(--color-secondary) 0%, var(--color-secondary) 100%);
+  transition: background 0.3s;
+}
+
+/* Slider thumb */
 .height__range::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -538,33 +589,150 @@ a {
   z-index: 2;
 }
 
-    
-    .height__value {
-      font-weight: 700;
-      color: var(--color-primary);
-      margin-left: 4px;
-    }
-    
-    .height__delete {
-      background: transparent;
-      border: none;
-      position: absolute;
-      top: -8px;
-      right: 50px;
-      font-size: 16px;
-    }
-    
-    .height__add {
-      font-family: Rubrik;
-      font-size: 16px;
-      background-color: white;
-      border: 2px solid var(--color-secondary);
-      color: var(--color-black);
-      border-radius: 100px;
-      display: flex;
-      align-items: center;
-      gap: var(--space-xs);
-      cursor: pointer;
-      margin: 0 auto var(--space-xl);
-      padding: 4px 12px 4px 4px;
-    }
+/* Delete button on slider */
+.height__delete {
+  background: transparent;
+  border: none;
+  position: absolute;
+  top: -8px;
+  right: 50px;
+  font-size: 16px;
+}
+
+/* Add another child button */
+.height__add {
+  font-family: Rubrik;
+  font-size: 16px;
+  background-color: white;
+  border: 2px solid var(--color-secondary);
+  color: var(--color-black);
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  cursor: pointer;
+  margin: 0 auto var(--space-xl);
+  padding: 4px 12px 4px 4px;
+}
+.step__nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-s) var(--space-l);
+  display: flex;
+  justify-content: center;
+  gap: var(--space-s);
+  z-index: 10;
+  margin-bottom: var(--space-l);
+}
+
+/* -------------------------------- */
+/* DIN_PLAN-FOOD.HTML               */
+/* -------------------------------- */
+
+/* --- Page Layout --- */
+.page-content {
+  padding-bottom: 160px; /* Leaves room for fixed nav and step indicator */
+}
+
+/* --- Banner Styling (Shared base, specific illustration already styled) --- */
+.banner--height {
+  /* Uses shared .banner styles for layout and spacing */
+}
+
+.banner__title--big {
+  color: white;
+  -webkit-text-stroke-width: 8px;
+  -webkit-text-stroke-color: var(--color-primary);
+  paint-order: stroke fill;
+}
+
+/* --- Question Title --- */
+.question__food {
+  
+}
+
+/* --- Food Option Grid --- */
+.food-options {
+  display: grid;
+  grid-template-columns: repeat(2, auto); /* 2 columns, shrink-wrapped */
+  gap: var(--space-s); /* smaller gap for closer spacing */
+  justify-content: center; /* center the whole grid */
+}
+
+.food-options__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* --- Food Icons --- */
+.food-options__image {
+  width: 95px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Food Labels --- */
+.food-options__label {
+  font-family: 'Rubrik', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  -webkit-text-stroke-width: 4px;
+  -webkit-text-stroke-color: white;
+  paint-order: stroke fill;
+  margin: 0;
+}
+
+/* --- Food Color Variants --- */
+.food-options__label--orange {
+  color: var(--color-orange);
+}
+
+.food-options__label--red {
+  color: var(--color-red);
+}
+
+.food-options__label--yellow {
+  color: var(--color-yellow);
+}
+
+.food-options__label--brown {
+  color: var(--color-brown);
+}
+
+
+/* --- Food Animation --- */
+
+/* === Food Option States === */
+.food-options__item {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Selected style */
+.food-options__item--selected {
+  transform: scale(1.1);
+  animation: pulse 0.6s ease-in-out infinite alternate;
+  z-index: 1;
+}
+
+/* Faded for unselected items */
+.food-options__item--faded {
+  opacity: 0.3;
+  filter: grayscale(100%);
+}
+
+/* Hover animation */
+@keyframes pulse {
+  from {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1.15);
+  }
+}

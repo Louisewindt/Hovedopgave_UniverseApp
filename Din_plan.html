@@ -8,23 +8,44 @@
 </head>
 <body>
 
-    <a href="index.html">
-        <img src="images/arrow_back.svg" alt="arrow back" class="arrow__back">
-      </a>
-
+  <!DOCTYPE html>
+  <html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Din Plan</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+  
+    <!-- Back arrow to homepage -->
+    <a href="index.html" class="arrow__back">
+      <img src="images/arrow_back.svg" alt="Gå tilbage" />
+    </a>
+  
+    <!-- Welcome banner section -->
     <section class="banner banner__info">
-        <img src="images/banner_DinPlan_welcome.svg" alt="" class="banner__illustration">
-
-        <section class="banner__content">
-      <h1 class="banner__title banner__title--big">Din Plan</h1>
-      <p class="banner__subtitle">Velkommen til Din Plan vi hjælper jer med at finde den rute, der passer bedst til jeres dag.</p>
-        </section>
+      <img src="images/banner_DinPlan_welcome.svg" alt="Velkomstillustration" class="banner__illustration" />
+  
+      <section class="banner__content">
+        <h1 class="banner__title banner__title--big">Din Plan</h1>
+        <p class="banner__subtitle">
+          Velkommen til Din Plan – vi hjælper jer med at finde den rute, der passer bedst til jeres dag.
+        </p>
+      </section>
     </section>
-
+  
+    <!-- Prompt text -->
     <h2 class="DinPlan__prompt">Er du klar?</h2>
+  
+    <!-- CTA button to start -->
     <button class="button button__primary--big" onclick="event.stopPropagation(); location.href='Din_plan-height.html';">
-        <img src="images/play_icon.svg" alt="" class="button__icon button__icon--big">Start
-      </button>
-        </section>
+      <img src="images/play_icon.svg" alt="" class="button__icon button__icon--big" />
+      Start
+    </button>
+  
+  </body>
+  </html>
+  
 </body>
 </html>
