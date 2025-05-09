@@ -1,7 +1,10 @@
 /* -------------------------------- */
 /* GLOBAL STYLES (used everywhere) */
 /* -------------------------------- */
-
+@font-face {
+  font-family: 'Rubrik';
+  src: url('font/Rubrik-Regular.woff2') format('woff2');
+}
 @font-face {
   font-family: 'Rubrik';
   src: url('font/Rubrik\\ Regular.otf') format('truetype');
