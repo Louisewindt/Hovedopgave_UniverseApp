@@ -143,6 +143,9 @@ a {
 .button--primary {
   background-color: var(--color-primary);
 }
+.button--highlight{
+  margin-top: 0px;
+}
 
 .button__icon {
   width: 22px;
