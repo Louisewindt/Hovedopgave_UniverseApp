@@ -66,49 +66,69 @@
   --space-xxxl: 64px;
   --space-xxxxl: 96px;
 }
-
 :root {
-  --text-style-h1-font-size: 32px;
-  --text-style-h1-font-weight: 600;
-  --text-style-h1-line-height: normal;
-  --text-style-h1-font-family: 'Rubrik', sans-serif;
+  /* Banner Text Styles */
+  --text-banner-title-font-family: 'Rubrik', sans-serif;
+  --text-banner-title-font-size: 32px;
+  --text-banner-title-font-weight: 600;
 
-  --text-style-h2-font-size: 24px;
-  --text-style-h2-font-weight: 700;
-  --text-style-h2-line-height: normal;
-  --text-style-h2-font-family: 'Rubrik', sans-serif;
+  --text-banner-title-highlight-font-size: 32px;
+  --text-banner-title-highlight-font-weight: 700;
 
-  --text-style-h3-font-size: 20px;
-  --text-style-h3-font-weight: bold;
-  --text-style-h3-line-height: normal;
-  --text-style-h3-font-family: 'Rubrik', sans-serif;
+  --text-banner-subtitle-font-size: 16px;
+  --text-banner-subtitle-font-weight: 200;
+  
+  --text-banner-subtitle-highlight-font-weight: 500;
 
-  --text-style-body-font-size: 16px;
-  --text-style-body-font-weight: 300;
-  --text-style-body-line-height: normal;
-  --text-style-body-font-family: 'Rubrik', sans-serif;
+  /* Button */
+  --text-button-font-size: 16px;
+  --text-button-font-weight: 400;
 
-  --text-style-button-font-size: 16px;
-  --text-style-button-font-weight: 400;
-  --text-style-button-line-height: normal;
-  --text-style-button-font-family: 'Rubrik', sans-serif;
+  --text-button-big-font-size: 32px;
+  --text-button-big-font-weight: 400;
 
-  --text-style-bold-font-size: 16px;
-  --text-style-bold-font-weight: 700;
-  --text-style-bold-line-height: normal;
-  --text-style-bold-font-family: 'Rubrik', sans-serif;
+  /* Section Title (e.g. Shows i dag) */
+  --text-section-title-font-size: 24px;
+  --text-section-title-font-weight: 700;
 
-  --text-style-show-time-font-size: 18px;
-  --text-style-show-time-font-weight: 700;
-  --text-style-show-time-line-height: normal;
-  --text-style-show-time-font-family: 'Rubrik', sans-serif;
+  /* Prompt/Question */
+  --text-prompt-font-size: 24px;
+  --text-prompt-font-weight: 700;
+
+  /* Show-specific */
+  --text-show-title-font-size: 16px;
+  --text-show-title-font-weight: 500;
+
+  --text-show-toggle-font-size: 16px;
+  --text-show-toggle-font-weight: 300;
+
+  --text-show-time-font-size: 18px;
+  --text-show-time-font-weight: 700;
+
+  --text-show-category-font-size: 16px;
+  --text-show-category-font-weight: 500;
+
+  --text-show-description-font-size: 16px;
+  --text-show-description-font-weight: 300;
+
+  /* Menu */
+  --text-menu-item-font-size: 16px;
+  --text-menu-item-font-weight: 300;
+
+  --text-menu-label-font-size: 16px;
+  --text-menu-label-font-weight: 400;
+
+  /* Food */
+  --text-food-label-font-size: 24px;
+  --text-food-label-font-weight: 700;
 }
+
 
 
 body {
   background-color: var(--color-blue);
   margin: 0;
-  font-family: var(--text-style-body-font-family);
+  font-family: 'Rubrik', sans-serif;
 }
 
 a {
@@ -127,9 +147,9 @@ a {
   padding: var(--space-xs) var(--space-l);
   border-radius: 100px;
   border: none;
-  font-family: var(--text-style-button-font-family);
-  font-size: var(--text-style-button-font-size);
-  font-weight: var(--text-style-button-font-weight);
+  font-family: var(--text-button-font-family);
+  font-size: var(--text-button-font-size);
+  font-weight: var(--text-button-font-weight);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin-top: var(--space-l);
   color: var(--color-white);
@@ -143,9 +163,6 @@ a {
 .button--primary {
   background-color: var(--color-primary);
 }
-.button--highlight{
-  margin-top: 0px;
-}
 
 .button__icon {
   width: 22px;
@@ -154,7 +171,7 @@ a {
 
 .step-indicator {
   position: fixed;
-  bottom: var(--space-l);
+  bottom: 45px;
   left: 0;
   right: 0;
   display: flex;
@@ -169,9 +186,10 @@ a {
   height: 35px;
   border-radius: 50%;
   background-color: var(--color-gray);
-  color: white;
-  font-weight: var(--text-style-bold-font-weight);
-  font-size: var(--text-style-h3-font-size);
+  color: var(--color-white);
+  font-family: var(--text-button-font-family); 
+  font-size: 20px;
+  font-weight: var(--text-button-font-weight);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -189,7 +207,7 @@ a {
   height: 6px;
   border-radius: 3px;
   background-color: var(--color-gray);
-  margin: var(--space-m) -2px;
+  margin: var(--space-m) -2px; 
   z-index: 1;
 }
 
@@ -212,12 +230,12 @@ a {
 }
 
 .section__title {
-  font-size: var(--text-style-h2-font-size);
-  font-weight: var(--text-style-h2-font-weight);
-  font-family: var(--text-style-h2-font-family);
-  margin-top: 0;
+  font-family: var(--text-section-title-font-family);
+  font-size: var(--text-section-title-font-size);
+  font-weight: var(--text-section-title-font-weight);
   text-align: center;
-  color: white;
+  color: var(--color-white);
+  margin-top: 0;
   -webkit-text-stroke-width: 5px;
   -webkit-text-stroke-color: var(--color-primary);
   paint-order: stroke fill;
@@ -256,14 +274,16 @@ a {
 }
 
 .shows__title {
-  font-size: var(--text-style-body-font-size);
-  font-weight: var(--text-style-button-font-weight);
+  font-family: var(--text-show-title-font-family);
+  font-size: var(--text-show-title-font-size);
+  font-weight: var(--text-show-title-font-weight);
   margin: 0;
 }
 
 .shows__time {
-  font-size: var(--text-style-show-time-font-size);
-  font-weight: var(--text-style-show-time-font-weight);
+  font-family: var(--text-show-time-font-family);
+  font-size: var(--text-show-time-font-size);
+  font-weight: var(--text-show-time-font-weight);
   color: var(--color-primary);
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: white;
@@ -324,7 +344,7 @@ a {
   padding: var(--space-xxs) var(--space-m);
   display: flex;
   flex-direction: column;
-  gap: var(--space-xs);
+  gap: 10px;
   margin: var(--space-s) auto;
   background-color: var(--color-white);
   border: 5px solid var(--color-white);
@@ -335,20 +355,19 @@ a {
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
 }
 
-
 .banner--plan {
   background-image: url(images/DinPlan_banner.svg);
 }
 
 .banner__illustration {
   position: absolute;
-  right: var(--space-xs);
+  right: 8px;
   bottom: 0;
   object-fit: contain;
   z-index: 0;
 }
 
-.banner__illustration--resturant,
+.banner__illustration--restaurant,
 .banner__illustration--shows {
   height: 88%;
 }
@@ -372,13 +391,21 @@ a {
 }
 
 .banner__title--highlight {
+  font-family: var(--text-banner-title-font-family);
+  font-size: var(--text-banner-title-highlight-font-size);
+  font-weight: var(--text-banner-title-highlight-font-weight);
   color: var(--color-primary);
+  margin: var(--space-xxs);
   -webkit-text-stroke-width: 7px;
   -webkit-text-stroke-color: white;
   paint-order: stroke fill;
 }
 
 .banner__subtitle--highlight {
+  font-family: var(--text-banner-title-font-family);
+  font-size: var(--text-banner-subtitle-font-size);
+  font-weight: var(--text-banner-subtitle-highlight-font-weight);
+  margin: var(--space-xxs);
   color: var(--color-black);
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: white;
@@ -386,16 +413,16 @@ a {
 }
 
 .banner__title {
-  font-size: var(--text-style-h1-font-size);
-  font-weight: var(--text-style-h1-font-weight);
-  font-family: var(--text-style-h1-font-family);
+  font-family: var(--text-banner-title-font-family);
+  font-size: var(--text-banner-title-font-size);
+  font-weight: var(--text-banner-title-font-weight);
   margin: var(--space-xxs);
 }
 
 .banner__subtitle {
-  font-size: var(--text-style-body-font-size);
-  font-weight: var(--text-style-body-font-weight);
-  font-family: var(--text-style-body-font-family);
+  font-family: var(--text-banner-title-font-family);
+  font-size: var(--text-banner-subtitle-font-size);
+  font-weight: var(--text-banner-subtitle-font-weight);
   margin: var(--space-xxs);
 }
 
@@ -428,8 +455,9 @@ a {
   flex-direction: column;
   align-items: center;
   color: white;
-  font-size: var(--text-style-body-font-size);
-  font-weight: var(--text-style-body-font-weight);
+  font-family: var(--text-menu-item-font-family);
+  font-size: var(--text-menu-item-font-size);
+  font-weight: var(--text-menu-item-font-weight); 
 }
 
 .menu__link {
@@ -447,8 +475,9 @@ a {
 }
 
 .menu__label {
-  font-size: var(--text-style-body-font-size);
-  font-weight: var(--text-style-button-font-weight);
+  font-family: var(--text-menu-item-font-family);
+  font-size: var(--text-menu-label-font-size);
+  font-weight: var(--text-menu-label-font-weight);
 }
 
 .menu__logo {
@@ -457,18 +486,18 @@ a {
   left: 50%;
   transform: translateX(-50%);
   border-radius: 50%;
-  padding: 12px;
+  padding: var(--space-s);
 }
 /* -------------------------------- */
 /* DIN_PLAN.HTML             */
 /* -------------------------------- */
 .arrow__back img {
-  margin-top: 8px;
+  margin-top: var(--space-xs);
 }
 
 .banner__info {
-  border-radius: 8px;
-  border: 5px solid var(--color-white, #FFF);
+  border-radius: var(--space-s);
+  border: 5px solid var(--color-white);
   background-size: cover;
   background-color: var(--color-white);
   background-position: center;
@@ -477,7 +506,7 @@ a {
 
 .banner__illustration {
   position: absolute;
-  right: var(--space-xs);
+  right: var(--space-xs); /* 8px */
   bottom: 0;
   object-fit: contain;
   z-index: 0;
@@ -494,34 +523,34 @@ a {
 }
 
 .banner__title {
-  font-size: var(--text-style-h1-font-size);
-  font-weight: var(--text-style-h1-font-weight);
-  font-family: var(--text-style-h1-font-family);
+  font-family: var(--text-banner-title-font-family);
+  font-size: var(--text-banner-title-font-size);
+  font-weight: var(--text-banner-title-font-weight);
   margin: var(--space-xxs);
 }
 
 .banner__title--big {
-  color: white;
-  -webkit-text-stroke-width: var(--space-xs);
+  color: var(--color-white);
+  -webkit-text-stroke-width: 8px;
   -webkit-text-stroke-color: var(--color-primary);
   paint-order: stroke fill;
 }
 
 .banner__subtitle {
-  font-size: var(--text-style-body-font-size);
-  font-weight: var(--text-style-body-font-weight);
-  font-family: var(--text-style-body-font-family);
+  font-family: var(--text-banner-title-font-family);
+  font-size: var(--text-banner-subtitle-font-size);
+  font-weight: var(--text-banner-subtitle-font-weight);
   margin: var(--space-xxs);
 }
 
 .DinPlan__prompt {
-  font-family: var(--text-style-h2-font-family);
-  font-size: var(--text-style-h2-font-size);
-  font-weight: var(--text-style-h2-font-weight);
+  font-family: var(--text-prompt-font-family);
+  font-size: var(--text-prompt-font-size);
+  font-weight: var(--text-prompt-font-weight);
   text-align: center;
   color: var(--color-primary);
   -webkit-text-stroke-width: 3px;
-  -webkit-text-stroke-color: white;
+  -webkit-text-stroke-color: var(--color-white);
   paint-order: stroke fill;
   margin: var(--space-xl) 0 var(--space-l);
   margin-top: var(--space-xxxl);
@@ -534,11 +563,11 @@ a {
   width: 176px;
   padding: var(--space-s) var(--space-xl);
   gap: var(--space-m);
-  font-family: var(--text-style-button-font-family);
-  font-size: var(--text-style-h1-font-size);
-  font-weight: var(--text-style-button-font-weight);
+  font-family: var(--text-button-font-family);
+  font-size: var(--text-button-big-font-size);
+  font-weight: var(--text-button-big-font-weight);
   border-radius: 100px;
-  color: white;
+  color: var(--color-white);
   margin: 0 auto;
   margin-top: var(--space-xxxxl);
   background-color: var(--color-primary);
@@ -554,32 +583,30 @@ a {
 /* DIN_PLAN-HEIGHT.HTML             */
 /* -------------------------------- */
 
+/* --- Page Padding to Make Room for Bottom Navigation --- */
 .page-content {
   padding-bottom: 160px; /* Space for fixed nav and step indicator */
 }
 
-.banner--height {
-  /* Uses shared .banner styles */
-}
+/* --- Banner Section (Shared Styles) --- */
+
 
 .banner__title--big {
-  font-size: var(--text-style-h1-font-size);
-  font-weight: var(--text-style-h1-font-weight);
-  font-family: var(--text-style-h1-font-family);
   color: white;
   -webkit-text-stroke-width: 8px;
   -webkit-text-stroke-color: var(--color-primary);
   paint-order: stroke fill;
 }
 
+/* --- Question Title --- */
 .question {
-  font-family: var(--text-style-h2-font-family);
-  font-size: var(--text-style-h2-font-size);
-  font-weight: var(--text-style-h2-font-weight);
+  font-family: var(--text-prompt-font-family);
+  font-size: var(--text-prompt-font-size);
+  font-weight: var(--text-prompt-font-weight);
   text-align: center;
   color: var(--color-primary);
   -webkit-text-stroke-width: 3px;
-  -webkit-text-stroke-color: white;
+  -webkit-text-stroke-color: var(--color-white);
   paint-order: stroke fill;
   margin: 0;
 }
@@ -588,6 +615,7 @@ a {
   margin-bottom: var(--space-m);
 }
 
+/* --- Height Slider Section --- */
 .height__sliders {
   display: flex;
   flex-direction: column;
@@ -601,18 +629,20 @@ a {
   flex-direction: column;
   align-items: center;
   position: relative;
-  font-family: var(--text-style-body-font-family);
-  font-size: var(--text-style-body-font-size);
-  font-weight: var(--text-style-button-font-weight);
+  font-family: var(--text-show-title-font-family); /* closest matching style */
+  font-size: var(--text-show-title-font-size);
+  font-weight: var(--text-show-title-font-weight);
 }
 
 .height__value {
-  font-size: var(--text-style-show-time-font-size);
-  font-weight: var(--text-style-show-time-font-weight);
+  font-family: var(--text-show-time-font-family);
+  font-size: var(--text-show-time-font-size);
+  font-weight: var(--text-show-time-font-weight);
   color: var(--color-primary);
-  margin-left: var(--space-xxs);
+  margin-left: var(--space-xs);
 }
 
+/* Slider appearance */
 .height__range {
   -webkit-appearance: none;
   width: 250px;
@@ -624,6 +654,7 @@ a {
   transition: background 0.3s;
 }
 
+/* Slider thumb */
 .height__range::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -631,25 +662,27 @@ a {
   width: 24px;
   border-radius: 50%;
   background-color: var(--color-primary);
-  border: 2px solid white;
+  border: 2px solid var(--color-white);
   cursor: pointer;
   position: relative;
   z-index: 2;
 }
 
+/* Delete button on slider */
 .height__delete {
   background: transparent;
   border: none;
   position: absolute;
   top: -8px;
   right: 50px;
-  font-size: var(--text-style-body-font-size);
+  font-size: var(--text-button-font-size);
 }
 
+/* Add another child button */
 .height__add {
-  font-family: var(--text-style-button-font-family);
-  font-size: var(--text-style-button-font-size);
-  background-color: white;
+  font-family: var(--text-button-font-family);
+  font-size: var(--text-button-font-size);
+  background-color: var(--color-white);
   border: 2px solid var(--color-secondary);
   color: var(--color-black);
   border-radius: 100px;
@@ -658,9 +691,8 @@ a {
   gap: var(--space-xs);
   cursor: pointer;
   margin: 0 auto var(--space-xl);
-  padding: var(--space-xxs) var(--space-s) var(--space-xxs) var(--space-xxs);
+  padding: 4px 12px 4px 4px;
 }
-
 .step__nav {
   position: fixed;
   bottom: 0;
@@ -671,9 +703,8 @@ a {
   justify-content: center;
   gap: var(--space-s);
   z-index: 10;
-  margin-bottom: var(--space-m);
+  margin-bottom: var(--space-l);
 }
-
 
 /* -------------------------------- */
 /* DIN_PLAN-FOOD.HTML               */
@@ -682,11 +713,6 @@ a {
 /* --- Page Layout --- */
 .page-content {
   padding-bottom: 160px; /* Leaves room for fixed nav and step indicator */
-}
-
-/* --- Banner Styling (Shared base, specific illustration already styled) --- */
-.banner--height {
-  /* Uses shared .banner styles for layout and spacing */
 }
 
 .banner__title--big {
@@ -698,15 +724,24 @@ a {
 
 /* --- Question Title --- */
 .question__food {
-  
+  font-family: var(--text-prompt-font-family);
+  font-size: var(--text-prompt-font-size);
+  font-weight: var(--text-prompt-font-weight);
+  text-align: center;
+  color: var(--color-primary);
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: var(--color-white);
+  paint-order: stroke fill;
+  margin: 0;
+  margin-bottom: var(--space-m);
 }
 
 /* --- Food Option Grid --- */
 .food-options {
   display: grid;
-  grid-template-columns: repeat(2, auto); /* 2 columns, shrink-wrapped */
-  gap: var(--space-s); /* smaller gap for closer spacing */
-  justify-content: center; /* center the whole grid */
+  grid-template-columns: repeat(2, auto);
+  gap: var(--space-s);
+  justify-content: center;
 }
 
 .food-options__item {
@@ -714,6 +749,8 @@ a {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 /* --- Food Icons --- */
@@ -727,13 +764,13 @@ a {
 
 /* --- Food Labels --- */
 .food-options__label {
-  font-family: 'Rubrik', sans-serif;
-  font-size: 20px;
-  font-weight: bold;
-  -webkit-text-stroke-width: 4px;
-  -webkit-text-stroke-color: white;
-  paint-order: stroke fill;
+  font-family: var(--text-food-label-font-family);
+  font-size: var(--text-food-label-font-size);
+  font-weight: var(--text-food-label-font-weight);
   margin: 0;
+  -webkit-text-stroke-width: 4px;
+  -webkit-text-stroke-color: var(--color-white);
+  paint-order: stroke fill;
 }
 
 /* --- Food Color Variants --- */
@@ -796,7 +833,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-xl); 
+  gap: var(--space-xl);
   
 
 }
@@ -804,8 +841,8 @@ a {
 .show {
   display: flex;
   align-items: center;
-  background: white;
-  border-radius: 8px;
+  background: var(--color-white);
+  border-radius: var(--space-s); 
   padding: var(--space-xs);
   margin: auto;
   position: relative;
@@ -849,7 +886,7 @@ a {
   justify-content: space-between;
   width: 100%;
   height: 55px;
-  gap:var(--space-xs);
+  gap: var(--space-xs); 
 }
 
 .show__text-group {
@@ -860,22 +897,22 @@ a {
 }
 
 .show__title {
-  font-family: var(--text-style-button-font-family);
-  font-weight: var(--text-style-button-font-weight);
-  font-size: var(--text-style-button-font-size);
+  font-family: var(--text-show-title-font-family);
+  font-size: var(--text-show-title-font-size);
+  font-weight: var(--text-show-title-font-weight);
   margin: 0;
-  margin-top: 2px;
+  margin-top: var(--space-xxs);
 }
 
 .show__toggle {
-  font-family: var(--text-style-body-font-family);
-  font-weight: var(--text-style-body-font-weight);
-  font-size: var(--text-style-body-font-size);
+  font-family: var(--text-body-font-family);
+  font-size: var(--text-body-font-size);
+  font-weight: var(--text-body-font-weight);
   margin: 0;
   display: flex;
   align-items: center;
   gap: var(--space-xs);
-  color: black;
+  color: var(--color-black);
 }
 
 .show__arrow {
@@ -885,9 +922,9 @@ a {
 }
 
 .show__time {
-  font-family: var(--text-style-show-time-font-family);
-  font-weight: var(--text-style-show-time-font-weight);
-  font-size: var(--text-style-show-time-font-size);
+  font-family: var(--text-show-time-font-family);
+  font-size: var(--text-show-time-font-size);
+  font-weight: var(--text-show-time-font-weight);
   color: var(--color-secondary);
   margin: 0;
 }
@@ -895,12 +932,11 @@ a {
 .show__checkbox {
   width: 22px;
   height: 22px;
-  background: #D9D9D9;
+  background: var(--color-gray);
   border-radius: 6px;
   border: none;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25);
   cursor: pointer;
-  margin-left: var(--space-xxs);
   position: relative;
   padding: 0;
 }
@@ -919,18 +955,18 @@ a {
 /* Hide the details by default */
 
 .show--active {
-  margin-bottom: 75px; /* or whatever height works for your dropdown */
+  margin-bottom: 75px; 
 }
 .show__details {
   display: none;
   position: absolute;
-  top: 93%; /* show below the .show box */
+  top: 93%;
   left: 0;
   width: 314px;
-  background: white;
-  border-radius: 0 0 8px 8px;
+  background: var(--color-white);
+  border-radius: 0 0 var(--space-s) var(--space-s);
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  padding: var(--space-xs) var(--space-m);
+  padding: var(--space-xs) var(--space-s);
 }
 
 .show--expanded .show__details {
@@ -944,18 +980,20 @@ a {
 }
 
 .show__category {
-  font-size: var(--text-style-button-font-size);
-  font-weight: var(--text-style-button-font-weight);
+  font-family: var(--text-body-font-family);
+  font-size: var(--text-body-font-size);
+  font-weight: 500;
   color: var(--color-secondary);
-  margin: var(--space-xxs) 0; /* 4px top-bottom */
+  margin: var(--space-xxs) 0;
   display: flex;
   align-items: center;
-  gap: var(--space-xxs); /* 4px */
+  gap: var(--space-xxs);
 }
 
 .show__description {
-  font-size: var(--text-style-body-font-size);
-  font-weight: var(--text-style-body-font-weight);
+  font-family: var(--text-body-font-family);
+  font-size: var(--text-body-font-size);
+  font-weight: var(--text-body-font-weight);
   color: var(--color-black);
   margin: 0;
 }
