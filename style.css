@@ -583,9 +583,8 @@ a {
 /* DIN_PLAN-HEIGHT.HTML             */
 /* -------------------------------- */
 
-/* --- Page Padding to Make Room for Bottom Navigation --- */
 .page-content {
-  padding-bottom: 160px; /* Space for fixed nav and step indicator */
+  padding-bottom: 160px; 
 }
 
 /* --- Banner Section (Shared Styles) --- */
