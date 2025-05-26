@@ -671,11 +671,12 @@ a {
 .height__delete {
   background: transparent;
   border: none;
-  position: absolute;
+  position: relative;
   top: -8px;
   right: 45px;
   font-size: var(--text-button-font-size);
 }
+
 
 /* Add another child button */
 .height__add {
@@ -692,6 +693,7 @@ a {
   margin: 0 auto var(--space-xl);
   padding: 4px 12px 4px 4px;
 }
+
 .step__nav {
   position: fixed;
   bottom: 0;
