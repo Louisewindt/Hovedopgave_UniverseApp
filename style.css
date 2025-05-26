@@ -319,12 +319,12 @@ a {
 
 .shows__arrow--left {
   top: 25%;
-  left: 16px;
+  left: 0px;
 }
 
 .shows__arrow--right {
   top: 25%;
-  left: 91%;
+  left: 97%;
 }
 
 
