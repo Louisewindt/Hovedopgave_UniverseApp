@@ -672,8 +672,7 @@ a {
   background: transparent;
   border: none;
   position: relative;
-  top: -8px;
-  right: 45px;
+
   font-size: var(--text-button-font-size);
 }
 
